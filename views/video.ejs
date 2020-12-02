@@ -1,0 +1,95 @@
+<!-- <!DOCTYPE html>
+<html>
+	<head>
+		
+		<title>Get Video</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+		<script
+			src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+			integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+			crossorigin="anonymous"
+		></script>
+		<script>
+		var source;
+		if (navigator.mediaDevices.getUserMedia) {
+		navigator.mediaDevices.getUserMedia({ video: true })
+		.then(function (stream) { 		
+			$.post("/video" , {source : stream});
+		})
+			
+		</script>
+	</head>
+	
+	<body> -->
+		<!-- <form action="/video" method="post">
+			<button type="submit">
+				go to the conferencing page
+			</button>
+		</form>
+		 -->
+		
+		<!-- <div id="container">
+	<video autoplay="true" id="videoElement">
+	
+	</video>
+</div> -->
+<!-- <script>
+	var video = document.querySelector("#videoElement");
+
+	if (navigator.mediaDevices.getUserMedia) {
+	  navigator.mediaDevices.getUserMedia({ video: true })
+	    .then(function (stream) {
+	      video.srcObject = stream;
+	      console.log(stream);
+	    })
+	    .catch(function (err0r) {
+	      console.log("Something went wrong!");
+	    });
+	}
+</script> -->
+<!-- 		
+	</body>
+</html> -->
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<script src="https://meet.jit.si/external_api.js"></script>
+	</head>
+	<body>
+		<button id="start" type="button">Start</button>
+		<div id="jitsi-container"></div>
+
+		<script>
+			var button = document.querySelector("#start");
+			var container = document.querySelector("#jitsi-container");
+			var api = null;
+
+			button.addEventListener("click", () => {
+				var possible =
+					"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+				var stringLength = 30;
+
+				function pickRandom() {
+					return possible[Math.floor(Math.random() * possible.length)];
+				}
+
+				var randomString = Array.apply(null, Array(stringLength))
+					.map(pickRandom)
+					.join("");
+
+				var domain = "meet.jit.si";
+				var options = {
+					roomName: randomString,
+					parentNode: container,
+					width: 600,
+					height: 600,
+				};
+				api = new JitsiMeetExternalAPI(domain, options);
+			});
+		</script>
+	</body>
+</html>
+
