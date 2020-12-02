@@ -23,7 +23,7 @@ var indexRoutes      = require("./routes/index");
 mongoose.Promise = global.Promise;
 
 const databaseUri ='mongodb://localhost/confmate';
-mongoose.connect("mongodb://localhost/confmate",{ useFindAndModify: false, useNewUrlParser: true ,useUnifiedTopology: true });
+mongoose.connect("mongodb+srv://danish:jRRyezykn9p1zYwo@conf-mate.shxow.mongodb.net/confmate?retryWrites=true&w=majority",{ useFindAndModify: false, useNewUrlParser: true ,useUnifiedTopology: true });
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "ejs");
