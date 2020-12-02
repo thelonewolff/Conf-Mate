@@ -76,7 +76,7 @@
 		</nav>
 		
 		<div class="container text-center">
-			<div id="jitsi-container"></div>
+			<div id="jitsi-container" class="afterClick"></div>
 		</div>
 		
 		
@@ -173,6 +173,7 @@
 
 			button.addEventListener("click", () => {
 				document.getElementById("about-body").classList.add("afterClick");
+				container.classList.remove("afterClick");
 				var possible =
 					"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
 				var stringLength = 30;
